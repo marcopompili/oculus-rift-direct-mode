@@ -20,4 +20,8 @@ echo "Switching off the Rift..."
 xrandr --screen $SCREENID --output HDMI-0 --off
 ;;
 
+*)
+echo "USAGE: $0 <on|off>"
+exit 1
+;;
 esac
