@@ -1,0 +1,8 @@
+#!/bin/sh
+
+SCREEN=1
+
+x11vnc -display :1.$SCREEN -scale 0.5 -rotate +90 \
+	-localhost -nopw -norc -timeout 1 \
+	-q -viewonly -once -bg && \
+vncviewer localhost
