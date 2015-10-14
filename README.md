@@ -10,7 +10,7 @@ need change some entries to make it work on your setup, but it gives an idea
 on how X.Org should treat the Rift as another Screen.
 
 Here's my article about configuring the Rift:
-http://blog.emarcs.org/blog/xorg-and-the-oculus-rift/
+http://blog.emarcs.org/oculus-rift-direct-mode-on-linux/
 
 ## Using the scripts
 Use the __rift_switch__ command using *on* or *off* to switch the Rift state:
