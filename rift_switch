@@ -2,22 +2,22 @@
 
 if [ $# -ne 1 ]
 then
-	echo "USAGE: $0 <on|off>"
+	echo -e "\033[1;31mUSAGE: $0 <on|off>\033[0m"
 	exit 1
 fi
 
-SCREENID=1
+SCR=1
 
 case "$1" in
 
 on)
 echo "Switching on the Rift..."
-xrandr --screen $SCREENID --output HDMI-0 --auto
+xrandr --screen $SCR --output HDMI-0 --auto
 ;;
 
 off)
 echo "Switching off the Rift..."
-xrandr --screen $SCREENID --output HDMI-0 --off
+xrandr --screen $SCR --output HDMI-0 --off
 ;;
 
 *)

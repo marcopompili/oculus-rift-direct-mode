@@ -2,24 +2,29 @@
 
 if [ $# -ne 1 ]
 then
-	echo "USAGE: $0 <rift-executable>"
+	echo -e "\033[1;31mUSAGE: $0 <rift-executable>\033[0m"
 	exit 1
 fi
 
-SCREENID=1
+DSP=$DISPLAY
+SCR=1
 
-STATE=`xrandr --screen $SCREENID | grep "Screen $SCREENID" | cut -d, -f2 | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'`
+STATE=`xrandr --screen $SCR | grep "Screen $SCR" | cut -d, -f2 | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//'`
 
 if [ "$STATE" = "current 8 x 8" ]
 then
+	echo "Turning on the Rift..."
 	rift_switch on
 fi
 
 # Giving the rift a second to turn on, just in case
+echo -e "\033[0;33mWait for it, wait for it...\033[0m"
 sleep 1
 
 # Trapping INT, TERM signals
-trap "rift_switch off" SIGINT SIGTERM
+trap "rift_switch off" SIGINT SIGTERM ERR
+
+echo -e "\033[0;32mHere we go!\033[0m"
 
 # Launching the application
-DISPLAY=:1.$SCREENID $1
+DISPLAY=:$DSP.$SCR $1
