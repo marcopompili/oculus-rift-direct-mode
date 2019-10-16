@@ -12,7 +12,7 @@ will probably need to change some entries in __30-monitor.conf__ to
 make this work on your setup, but it gives an idea on how X.Org
 should treat the Rift as another Screen.
 
-Here's my article about [configuring the Rift on Linux](http://blog.emarcs.org/oculus-rift-direct-mode-on-linux/)
+Here's my article about [configuring the Rift on Linux](https://marcopompili.github.io/linux/xorg/oculus/2015/06/02/oculus-rift-direct-mode-on-Linux.html)
 
 ## Using the scripts
 
